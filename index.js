@@ -4,8 +4,17 @@ let guestPoint = JSON.parse(localStorage.getItem("guest"))
 let homeEl = document.getElementById('home-point')
 let guestEl = document.getElementById('guest-point')
 
-homeEl.textContent = homePoint
-guestEl.textContent = guestPoint
+if (homePoint === null) {
+    homeEl.textContent = 0
+} else {
+    homeEl.textContent = homePoint
+}
+
+if (guestPoint === null) {
+    guestEl.textContent = 0
+} else {
+    guestEl.textContent = guestPoint
+}
 
 function storeLocalStorage(club, points) {
     if (club === "home") {
